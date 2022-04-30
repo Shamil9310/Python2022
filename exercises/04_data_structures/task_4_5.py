@@ -22,8 +22,9 @@
 
 command1 = "switchport trunk allowed vlan 1,2,3,5,8"
 command2 = "switchport trunk allowed vlan 1,3,8,9"
+print(len(command1))
+print(len(command2))
 count=command1[30:] + command2[29:]
 cmd = count
 result = cmd.replace(" ", ",").split(",")
 print(result)
-
