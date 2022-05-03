@@ -22,9 +22,10 @@
 
 command1 = "switchport trunk allowed vlan 1,2,3,5,8"
 command2 = "switchport trunk allowed vlan 1,3,8,9"
-print(len(command1))
-print(len(command2))
-count=command1[30:] + command2[29:]
-cmd = count
-result = cmd.replace(" ", ",").split(",")
+vlan = set(command1) | set(command2)
+cmd = list(vlan)
+cmd.sort()
+new_cmd = cmd[2:8]
+new_cmd.remove('2'),new_cmd.remove('5'),new_cmd.remove('9')
+result = new_cmd
 print(result)
