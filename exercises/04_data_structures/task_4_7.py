@@ -16,3 +16,10 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
+result=mac.replace(":","")
+cmd = bin(int(result,16))
+bin_mac=cmd[2:]
+print(bin_mac)
+
+
+
