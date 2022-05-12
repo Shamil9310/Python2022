@@ -49,7 +49,8 @@ switchport trunk encapsulation dot1q
 switchport mode trunk
 switchport trunk allowed vlan 2,3,4,5
 """
-
+from sys import argv
+print(argv)
 access_template = [
     "switchport mode access",
     "switchport access vlan {}",
@@ -63,3 +64,9 @@ trunk_template = [
     "switchport mode trunk",
     "switchport trunk allowed vlan {}",
 ]
+
+vlan = input("Введите номер влана: ")
+intf = input("Введите номер интерфейса: ")
+print(f"inteface {intf}")
+access_str = "\n".join(access_template)
+print(access_str.format(vlan))
